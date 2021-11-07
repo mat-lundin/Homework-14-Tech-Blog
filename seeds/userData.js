@@ -8,17 +8,17 @@ const userdata = [
   },
   {
     username: 'simon',
-    email: 'a@a.com',
+    email: 'b@a.com',
     password: 'asdf'
   },
   {
     username: 'alvin',
-    email: 'a@a.com',
+    email: 'c@a.com',
     password: 'asdf'
   },
   {
     username: 'theodore',
-    email: 'a@a.com',
+    email: 'd@a.com',
     password: 'asdf'
   },
 ];
