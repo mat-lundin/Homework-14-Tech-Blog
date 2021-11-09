@@ -1,3 +1,13 @@
-{{#each galleries as |gallery|}}
-{{> gallery-details}}
+<h1>Welcome {{username}}!</h1>
+
+{{#each blogs as |blog|}}
+{{> blogposts blog}}
 {{/each}}
+{{userid}}
+<form class="new-post" id="new-post">
+    <input type='text' id="blogtitle" placeholder="Title">
+    <input type='text' id="blogtext" placeholder="New Blog Text">
+    <button type="submit" data-userid="{{userid}}" id="submit">Submit New Post</button>
+</form>
+
+<script src="./js/newPost.js"></script>

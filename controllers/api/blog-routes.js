@@ -3,15 +3,16 @@ const { Blogpost } = require('../../models');
 
 // CREATE new post
 router.post('/', async (req, res) => {
+  console.log(req.body,"POST")
   try {
     const dbBlogData = await Blogpost.create({
       title: req.body.title,
       text: req.body.text,
-      user_id: req.body.password,
+      user_id: req.body.user_id,
     });
 
     req.session.save(() => {
-      res.status(200).json(dbUserData);
+      res.status(200).json(dbBlogData);
     });
   } catch (err) {
     console.log(err);

@@ -4,23 +4,21 @@ const { User, Blogpost } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all blogposts for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth,async (req, res) => {
   try {
-    const dbUserBlogData = await User.findAll({
-      include: [
-        {
-          model: Blogpost,
-        },
-      ],
+    const dbUserBlogData = await Blogpost.findAll({
+
     });
 
     const blogs = dbUserBlogData.map((blog) =>
       blog.get({ plain: true })
     );
-
+console.log('blogs = ',blogs)
     res.render('homepage', {
       blogs,
       loggedIn: req.session.loggedIn,
+      username: req.session.username,
+      userid: req.session.userid
     });
   } catch (err) {
     console.log(err);
