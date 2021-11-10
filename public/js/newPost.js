@@ -1,4 +1,3 @@
-console.log('file recognized')
 const formEl = document.getElementById('new-post');
 const titleEl = document.getElementById('blogtitle');
 const textEl = document.getElementById('blogtext');
@@ -9,9 +8,6 @@ async function submitFormHandler(event){
     const title = titleEl.value;
     const text = textEl.value;
     const id = idEl.getAttribute('data-userid')
-    console.log('title = ',title);
-    console.log('text = ', text)
-    console.log('id = ',id)
     
     await fetch('/api/blog',
     {

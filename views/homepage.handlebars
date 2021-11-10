@@ -1,9 +1,10 @@
 <h1>Welcome {{username}}!</h1>
 
+<div id="blogsection">
 {{#each blogs as |blog|}}
 {{> blogposts blog}}
 {{/each}}
-{{userid}}
+</div>
 <form class="new-post" id="new-post">
     <input type='text' id="blogtitle" placeholder="Title">
     <input type='text' id="blogtext" placeholder="New Blog Text">
