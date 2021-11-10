@@ -2,14 +2,19 @@
 
 <div id="blogsection">
 {{#each blogs as |blog|}}
-{{> blogposts blog}}
+{{> blogposts blog }}
 {{/each}}
 </div>
+{{#if loggedIn}}
 <form class="new-post" id="new-post">
     <input type='text' id="blogtitle" placeholder="Title">
     <input type='text' id="blogtext" placeholder="New Blog Text">
     <button type="submit" data-userid="{{userid}}" id="submit">Submit New Post</button>
 </form>
-
 <script src="./js/newPost.js"></script>
+{{else}}
+<h2>Log in to post a new entry!</h2>
+{{/if}}
+
+
 <script src="./js/deletePost.js"></script>
